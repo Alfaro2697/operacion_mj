@@ -1,0 +1,91 @@
+/* Operación MJ · Propuesta reorganizada. Edita este archivo para cambiar SOLO esta escena. */
+#proposal.proposal-chapter-layout{
+ min-height:100dvh!important;padding:14px 12px 34px!important;
+ display:flex!important;align-items:flex-start!important;justify-content:center!important;
+ overflow-x:hidden!important;overflow-y:auto!important;
+ background:radial-gradient(circle at 23% 30%,rgba(255,218,103,.12),transparent 35%),
+  linear-gradient(160deg,#fff9f1 0%,#fff3e9 42%,#fce7ec 72%,#f0f3fa 100%)!important;
+}
+#proposal.proposal-chapter-layout:not(.active){display:none!important}
+#proposal .proposal-comic-page{width:100%;max-width:930px;margin:0 auto;padding:0}
+#proposal .comic-proposal-heading{
+ display:flex;align-items:center;justify-content:center;gap:12px;
+ width:max-content;max-width:95%;margin:6px auto 4px;padding:7px 18px;
+ font:clamp(14px,3.5vw,19px) Impact,'Arial Black',sans-serif;letter-spacing:.06em;
+ color:#15243d;background:#ffda67;border:3px solid #15243d;
+ transform:rotate(-1deg);box-shadow:4px 4px 0 #d52a40;
+}
+#proposal .comic-proposal-heading .issue-number{color:#2356a8;white-space:nowrap}
+#proposal .comic-proposal-heading .chapter-heart{color:#d52a40;font-size:1.2em}
+#proposal .comic-proposal-main{display:flex;flex-direction:column;align-items:center;gap:0}
+#proposal .comic-stage{
+ position:relative;display:flex;align-items:center;justify-content:center;
+ width:min(100%,515px);height:min(57dvh,530px);min-height:280px;
+ padding:0;margin:0 auto;isolation:isolate;overflow:hidden;
+ background:transparent!important;border:0!important;box-shadow:none!important;
+}
+#proposal .comic-stage::before{content:'';position:absolute;inset:9% 7% 2%;z-index:-1;pointer-events:none;
+ background:radial-gradient(ellipse at center,rgba(255,218,103,.22) 0%,rgba(255,218,103,.07) 47%,transparent 70%)}
+#proposal .comic-sunburst{position:absolute;inset:8% 11% 7%;z-index:-1;opacity:.42;pointer-events:none;
+ background:repeating-conic-gradient(from 4deg at 50% 48%,rgba(255,218,103,.19) 0deg 9deg,transparent 9deg 22deg);
+ -webkit-mask-image:radial-gradient(ellipse,black 14%,transparent 71%);mask-image:radial-gradient(ellipse,black 14%,transparent 71%)}
+#proposal .comic-deco{position:absolute;z-index:1;font-size:26px;font-weight:800;color:#d52a40;pointer-events:none;opacity:.7}
+#proposal .comic-deco-one{right:11%;top:16%;transform:rotate(-14deg)}
+#proposal .comic-deco-two{left:9%;bottom:22%;font-size:21px;color:#2356a8}
+#proposal .comic-stage .proposalVideo{
+ position:relative;z-index:2;display:block;
+ width:auto!important;max-width:100%!important;height:100%!important;max-height:100%!important;
+ object-fit:contain!important;background:transparent!important;border:0!important;
+ box-shadow:none!important;outline:0!important;margin:0!important;
+ -webkit-mask-image:none!important;mask-image:none!important;
+}
+#proposal .comic-prompt-wrap{width:100%;max-width:720px;margin:-2px auto 0;padding:0 6px 12px;position:relative;z-index:10}
+#proposal .comic-prompt-wrap .proposalQuestionVideo{
+ display:block!important;width:100%!important;max-width:100%!important;
+ margin:0!important;padding:clamp(12px,2.4vw,25px) clamp(14px,3vw,30px)!important;
+ opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;
+ border:3px solid #15243d!important;border-radius:25px 25px 24px 8px!important;
+ background:rgba(255,254,250,.97)!important;
+ box-shadow:6px 7px 0 #2356a8!important;text-align:center!important;
+}
+#proposal .comic-prompt-wrap .proposalQuestionVideo::before{top:-20px;left:50%;transform:translateX(-50%);border-left-width:15px;border-right-width:15px;border-bottom-width:20px}
+#proposal .comic-prompt-wrap .proposalQuestionVideo::after{top:-14px;left:50%;transform:translateX(-50%);border-left-width:11px;border-right-width:11px;border-bottom-width:14px}
+#proposal .comic-prompt-wrap .proposalQuestionBadgeVideo{
+ background:#ffda67!important;border:2px solid #15243d!important;
+ font:clamp(12px,2vw,15px) Impact,'Arial Black',sans-serif!important;
+ padding:4px 13px!important;margin:0 0 9px!important;
+}
+#proposal .comic-prompt-wrap .proposalQuestionVideo h2{
+ font:clamp(29px,5vw,46px)/1.05 Impact,'Arial Black',sans-serif!important;
+ color:#15243d!important;text-shadow:2px 2px 0 #f7dce6!important;
+ margin:3px auto 13px!important;max-width:620px;
+}
+#proposal .proposalVideoAnswers{display:flex!important;gap:14px!important;justify-content:center!important;
+ flex-wrap:wrap!important;pointer-events:auto!important;position:relative;z-index:50}
+#proposal .proposalVideoAnswers .proposal-choice{
+ flex:0 1 155px;min-width:114px!important;min-height:49px!important;
+ position:relative;z-index:51;pointer-events:auto!important;opacity:1!important;display:inline-flex!important;
+ justify-content:center;align-items:center;
+ border:3px solid #15243d!important;border-radius:8px!important;
+ box-shadow:4px 4px 0 #15243d!important;font:19px Impact,'Arial Black',sans-serif!important;
+}
+#proposal #noText{min-height:0!important;margin:8px auto 0!important;font-weight:700!important;
+ font-size:clamp(12px,2vw,15px)!important;line-height:1.3!important}
+#proposal #noText:empty{display:none}
+#proposal .replay-clip{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);z-index:10;
+ width:auto!important;padding:8px 14px;border:2px solid #15243d;border-radius:999px;
+ font-size:13px;background:#fff9f1;color:#15243d;box-shadow:3px 3px 0 #d52a40}
+@media(max-width:767.98px){
+ #proposal.proposal-chapter-layout{padding:10px 9px 26px!important}
+ #proposal .comic-proposal-heading{font-size:clamp(11px,3.2vw,14px);gap:6px;padding:7px 10px;margin:4px auto 0}
+ #proposal .comic-stage{width:100%;height:min(52dvh,485px);min-height:245px}
+ #proposal .comic-deco-one{right:3%;top:18%}
+ #proposal .comic-deco-two{left:4%;bottom:20%}
+ #proposal .comic-prompt-wrap{padding:0 7px 20px;margin-top:0}
+ #proposal .comic-prompt-wrap .proposalQuestionVideo{padding:13px 10px 14px!important;border-width:3px!important;box-shadow:4px 5px 0 #2356a8!important}
+ #proposal .comic-prompt-wrap .proposalQuestionVideo h2{font-size:clamp(25px,7.6vw,38px)!important;line-height:1.06!important;margin:2px auto 11px!important}
+ #proposal .proposalVideoAnswers .proposal-choice{flex:1 1 100px;max-width:165px;min-height:47px!important;font-size:18px!important}
+}
+@media(max-width:400px){#proposal .comic-stage{height:min(46dvh,395px)}#proposal .proposalVideoAnswers{gap:11px!important}}
+@media(max-height:680px) and (max-width:767px){#proposal .comic-stage{height:42dvh;min-height:230px}}
+@media(prefers-reduced-motion:reduce){#proposal .comic-deco{transform:none}}

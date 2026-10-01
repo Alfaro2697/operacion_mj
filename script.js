@@ -133,7 +133,7 @@ function renderQuestion(){
   container.innerHTML="";
   shuffle(item.options).forEach(opt=>{
     const b=document.createElement('button');
-    b.className="option";
+    b.className="btn option w-100";
     b.textContent=opt;
     b.onclick=()=>checkAnswer(opt);
     container.appendChild(b);
@@ -205,32 +205,29 @@ function setProposalFrame(index){
 function startProposal(){
   showOnly('proposal');
   noCount=0;
-
   const noText=document.getElementById('noText');
   const noBtn=document.getElementById('noBtn');
   const speech=document.getElementById('proposalSpeech');
   const video=document.getElementById('proposalVideo');
-
-  if(noText) noText.textContent="";
-  if(noBtn) noBtn.style.transform="none";
-  if(speech) speech.classList.remove('visible');
-
+  if(noText) noText.textContent='';
+  if(noBtn) noBtn.style.transform='';
+  // La pregunta y ambos botones están visibles desde el principio.
+  if(speech) speech.classList.add('visible');
   if(video){
     video.pause();
-    video.currentTime=0;
-
-    const reveal=()=>{
-      if(speech) speech.classList.add('visible');
-    };
-
-    video.onended=reveal;
-    video.play().catch(()=>{
-      reveal();
-    });
-
-    setTimeout(reveal,6100);
-  }else if(speech){
-    speech.classList.add('visible');
+    try { video.currentTime=0; } catch(err) {}
+    const attempt=video.play();
+    if(attempt && typeof attempt.catch==='function'){
+      attempt.catch(()=>{ // En móviles que bloquean autoplay, la pregunta sigue operativa.
+        if(!document.getElementById('restartProposalVideo')){
+          const replay=document.createElement('button');
+          replay.type='button';replay.id='restartProposalVideo';
+          replay.className='replay-clip'; replay.textContent='▶ Ver animación';
+          replay.onclick=()=>{video.play().then(()=>replay.remove()).catch(()=>{});};
+          video.parentElement.appendChild(replay);
+        }
+      });
+    }
   }
 }
 
@@ -269,7 +266,7 @@ function yes(){
   // Asegura que la primera foto aparezca y arranque el reel
   trendIndex = 0;
   buildTrendProgress();
-  showTrend(0, true);
+  showTrend(0);
   restartTrendTimer();
 
   // Lleva arriba de la sección
