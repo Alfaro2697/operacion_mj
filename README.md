@@ -1,2 +1,0 @@
-# operacion_mj
-propuesta

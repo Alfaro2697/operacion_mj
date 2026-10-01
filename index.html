@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Operación MJ 🕷️
+  </title>
+<meta content="Una pequeña sorpresa, una carta y una historia para MJ." name="description"/>
+<link href="vendor/bootstrap.min.css" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="comic-romance.css" rel="stylesheet"/>
+<meta content="#d52a40" name="theme-color"/><link href="proposal-redesign.css" rel="stylesheet"/></head>
+<body>
+<audio id="bgMusic" loop="" preload="auto">
+<source src="assets/musica.mp4" type="audio/mp4"/>
+</audio>
+<button aria-label="Pausar o reproducir música" class="musicToggle" id="musicToggle" onclick="toggleMusic()" title="Pausar o reanudar música" type="button">
+   ♫
+  </button>
+<div class="halftone">
+</div>
+<div id="comicLayer">
+<div class="comicWord" id="comicWord">
+    THWIP!
+   </div>
+<div class="comicBubble" id="comicBubble">
+    Identidad verificada.
+   </div>
+</div>
+<div class="flash" id="flash">
+</div>
+<div class="webshot" id="webshot">
+</div>
+<div class="radar" id="radar">
+</div>
+<div class="spark" id="spark">
+</div>
+<section class="screen active" id="s1">
+<div class="container-lg">
+<div class="row justify-content-center g-0">
+<div class="col-12 col-sm-11 col-md-10 col-lg-9">
+<div class="comic-card mx-auto text-center"><div class="comic-issue-top"><span>UNIVERSO MJ</span><span>EDICIÓN Nº 001</span></div>
+<span class="tag">
+        🕷️ ARCHIVO CLASIFICADO
+       </span>
+<h1 class="hero-title comic-cover-title">OPERACIÓN MJ</h1><div class="comic-cover-strap">Una misión. Dos protagonistas. Un gran secreto.</div>
+<p>
+        Este archivo contiene información confidencial.
+       </p>
+<p>
+        Antes de continuar, el sistema debe comprobar que realmente eres MJ.
+       </p>
+<button class="btn btn-lg action-button w-100 w-sm-auto" onclick="startQuiz()">
+        VERIFICAR IDENTIDAD 🕸️
+       </button>
+<div aria-hidden="true" class="comic-cover-footer"><span>ROMANCE EN PROGRESO</span><span>★ ★ ★</span></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="screen" id="quiz">
+<div class="container-lg">
+<div class="row justify-content-center g-0">
+<div class="col-12 col-sm-11 col-md-10 col-lg-9">
+<div class="comic-card mx-auto text-center" id="quizCard"><div class="comic-panel-number">VIÑETA 02  /  VERIFICACIÓN</div>
+<span class="tag">
+        SISTEMA DE SEGURIDAD ARÁCNIDO
+       </span>
+<h2>PRUEBA DE IDENTIDAD</h2>
+<p class="mb-3" id="questionText">
+</p>
+<div class="d-grid gap-2 mx-auto quiz-options" id="options">
+</div>
+<div class="feedback" id="feedback">
+</div>
+<div class="counter" id="counter">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="screen py-4" id="verified">
+<div class="letterScene container-sm" id="letterScene"><div class="comic-panel-number letter-panel-number">VIÑETA 03  /  MENSAJE ESPECIAL</div>
+<div class="letterIntro">
+<span class="letterBadge">
+      ✅ IDENTIDAD CONFIRMADA
+     </span>
+<h2>
+      Acceso concedido
+     </h2>
+<p>
+      Hay una carta esperando por ti.
+     </p>
+</div>
+<div aria-label="Abrir carta" class="envelopeWrap" id="envelopeWrap" onclick="openLetter()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLetter();}" role="button" tabindex="0">
+<div class="envelopeShadow">
+</div>
+<div class="envelope">
+<div class="envelopeBack">
+</div>
+<div class="letterPaper">
+<div class="paperMiniHeart">
+        ✦
+       </div>
+<div class="paperFor">
+        Para MJ
+       </div>
+<div class="paperLine">
+</div>
+<div class="paperMessage">
+        Tengo algo que quiero preguntarte...
+       </div>
+<button class="paperContinue btn btn-sm" onclick="event.stopPropagation(); startProposal()" type="button">
+        CONTINUAR ♡
+       </button>
+</div>
+<div class="envelopeFrontLeft">
+</div>
+<div class="envelopeFrontRight">
+</div>
+<div class="envelopeFrontBottom">
+</div>
+<div class="envelopeFlap">
+</div>
+<div class="waxSeal">
+<span>
+        MJ
+       </span>
+</div>
+</div>
+<div class="tapLetter" id="tapLetter">
+      Toca la carta para abrirla
+     </div>
+</div>
+</div>
+</section>
+<section class="screen proposalVideoScreen proposal-chapter-layout" id="proposal"><div class="container proposal-comic-page">
+<div class="row justify-content-center g-0"><div class="col-12 col-lg-10 col-xl-9">
+<div class="comic-proposal-heading"><span class="issue-number">VIÑETA 04</span><strong>EL GRAN MOMENTO</strong><span aria-hidden="true" class="chapter-heart">♥</span></div>
+<div class="comic-proposal-main">
+<div aria-label="Animación de la propuesta" class="comic-stage">
+<div aria-hidden="true" class="comic-sunburst"></div>
+<span aria-hidden="true" class="comic-deco comic-deco-one">♡</span><span aria-hidden="true" class="comic-deco comic-deco-two">✦</span>
+<video aria-label="Animación romántica de dos personajes estilo cómic" class="proposalVideo" id="proposalVideo" muted="" playsinline="" preload="metadata">
+<source src="assets/animacion_mj_nueva_transparente.webm" type="video/webm"/>
+<source src="assets/animacion_mj_nueva_pastel.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="comic-prompt-wrap"><div aria-label="Responder a la propuesta" class="proposalQuestionVideo visible" id="proposalSpeech" role="group">
+<div class="proposalQuestionBadgeVideo">MENSAJE SECRETO</div>
+<h2>MJ... ¿quieres ser mi novia? <span aria-hidden="true">❤️</span></h2>
+<div class="answerArea proposalVideoAnswers"><button class="btn proposal-choice btn-primary" onclick="yes()" type="button">¡SÍ! ❤️</button><button class="btn proposal-choice btn-secondary" id="noBtn" onclick="nope()" type="button">NO 😅</button></div>
+<p aria-live="polite" id="noText"></p>
+</div></div>
+</div>
+</div></div>
+</div></section>
+<section class="screen p-0" id="success">
+<div class="trendShell container-fluid" id="trendShell">
+<div class="row justify-content-center g-0 w-100">
+<div class="col-12 col-md-auto d-flex justify-content-center">
+<div class="trendViewport">
+<div class="trendProgress" id="trendProgress">
+</div>
+<div class="trendSlides">
+<div class="trendSlide zoom-in active" data-index="0">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_01.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 1" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_01.webp"/>
+</div>
+<div class="trendSlide pan-left" data-index="1">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_02.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 2" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_02.webp"/>
+</div>
+<div class="trendSlide pan-right" data-index="2">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_03.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 3" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_03.webp"/>
+</div>
+<div class="trendSlide soft-tilt" data-index="3">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_04.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 4" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_04.webp"/>
+</div>
+<div class="trendSlide zoom-out" data-index="4">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_05.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 5" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_05.webp"/>
+</div>
+<div class="trendSlide zoom-in" data-index="5">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_06.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 6" class="trendPhoto contain-photo" decoding="async" loading="lazy" src="assets/foto_06.webp"/>
+</div>
+<div class="trendSlide pan-left" data-index="6">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_07.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 7" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_07.webp"/>
+</div>
+<div class="trendSlide pan-right" data-index="7">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_08.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 8" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_08.webp"/>
+</div>
+<div class="trendSlide soft-tilt" data-index="8">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_09.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 9" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_09.webp"/>
+</div>
+<div class="trendSlide zoom-out" data-index="9">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_10.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 10" class="trendPhoto contain-photo" decoding="async" loading="lazy" src="assets/foto_10.webp"/>
+</div>
+<div class="trendSlide zoom-in" data-index="10">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_11.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 11" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_11.webp"/>
+</div>
+<div class="trendSlide pan-left" data-index="11">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_12.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 12" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_12.webp"/>
+</div>
+<div class="trendSlide pan-right" data-index="12">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_13.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 13" class="trendPhoto cover-photo" decoding="async" loading="lazy" src="assets/foto_13.webp"/>
+</div>
+<div class="trendSlide soft-tilt" data-index="13">
+<img alt="" class="trendBg" decoding="async" loading="lazy" src="assets/foto_14.webp"/>
+<div class="trendTint">
+</div>
+<img alt="Foto 14" class="trendPhoto contain-photo" decoding="async" loading="lazy" src="assets/foto_14.webp"/>
+</div>
+</div>
+<div class="trendGrain">
+</div>
+<div class="trendVignette">
+</div>
+<div class="trendTopText"><div class="epilogue-mini">EPÍLOGO · CAPÍTULO 01</div>
+<div class="trendUnlocked">NOVIAZGO DESBLOQUEADO</div>
+<div class="trendPhrase">
+         Con gran poder viene una gran responsabilidad.
+        </div>
+</div>
+<div class="trendBottom">
+<div class="relationshipCounter trendCounter" id="relationshipCounter">
+<div class="relationshipCounterTitle">
+          Desde que dijiste que sí ♡
+         </div>
+<div class="relationshipCounterGrid">
+<div class="relationshipUnit">
+<span class="relationshipNumber" id="loveDays">
+            0
+           </span>
+<span class="relationshipLabel">
+            días
+           </span>
+</div>
+<div class="relationshipUnit">
+<span class="relationshipNumber" id="loveHours">
+            00
+           </span>
+<span class="relationshipLabel">
+            horas
+           </span>
+</div>
+<div class="relationshipUnit">
+<span class="relationshipNumber" id="loveMinutes">
+            00
+           </span>
+<span class="relationshipLabel">
+            minutos
+           </span>
+</div>
+<div class="relationshipUnit">
+<span class="relationshipNumber" id="loveSeconds">
+            00
+           </span>
+<span class="relationshipLabel">
+            segundos
+           </span>
+</div>
+</div>
+</div>
+</div>
+<button aria-label="Foto anterior" class="trendTap trendTapLeft" onclick="prevTrend()" type="button">
+</button>
+<button aria-label="Foto siguiente" class="trendTap trendTapRight" onclick="nextTrend()" type="button">
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="secret" onclick="secret()">
+   🕷️
+  </div>
+<script src="vendor/bootstrap.bundle.min.js">
+</script>
+<script src="script.js">
+</script>
+</body>
+</html>
