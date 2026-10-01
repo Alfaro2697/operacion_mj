@@ -1,0 +1,115 @@
+/* Ajustes finales: video con fondo blanco y sobre mejor proporcionado */
+:root{
+  --mj-envelope-width:min(470px, 92vw);
+  --mj-envelope-ratio:1.54 / 1;
+}
+
+#proposal.proposal-chapter-layout,
+#proposal .proposal-comic-page,
+#proposal .comic-stage,
+#proposal .proposalVideoWrap,
+#proposal .proposalVideo{
+  background:#ffffff !important;
+}
+
+#proposal .comic-stage{
+  border-radius:28px;
+  overflow:hidden;
+  min-height:300px;
+  box-shadow:0 18px 44px rgba(39, 53, 79, .10);
+  border:1px solid rgba(27, 42, 75, .08);
+}
+
+#proposal .comic-stage::before{
+  display:none !important;
+}
+#proposal .comic-sunburst{
+  opacity:.16 !important;
+}
+#proposal .proposalVideo{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  background:#fff !important;
+  isolation:isolate;
+}
+#proposal .comic-prompt-wrap{
+  margin-top:12px;
+}
+
+#verified .letterScene{
+  max-width:880px;
+  gap:clamp(12px, 2vw, 22px);
+}
+#verified .envelopeWrap,
+.envelopeWrap{
+  width:var(--mj-envelope-width) !important;
+  aspect-ratio:var(--mj-envelope-ratio) !important;
+  max-width:470px;
+}
+#verified .envelope,
+.envelope{
+  inset:5% 0 10% !important;
+}
+#verified .envelopeShadow,
+.envelopeShadow{
+  left:10% !important;
+  right:10% !important;
+  bottom:-3% !important;
+  height:10% !important;
+}
+#verified .letterPaper,
+.letterPaper{
+  left:7% !important;
+  right:7% !important;
+  bottom:2% !important;
+  min-height:85% !important;
+  padding:32px 26px 24px !important;
+}
+#verified .envelopeWrap.open .letterPaper,
+.envelopeWrap.open .letterPaper{
+  transform:translateY(-20%) scale(.995) !important;
+}
+#verified .paperMessage,
+.paperMessage{
+  max-width:340px;
+}
+
+@media (max-width: 767.98px){
+  :root{
+    --mj-envelope-width:min(400px, 90vw);
+    --mj-envelope-ratio:1.44 / 1;
+  }
+  #proposal .comic-stage{
+    min-height:260px;
+    border-radius:22px;
+  }
+  #verified .letterPaper,
+  .letterPaper{
+    padding:26px 18px 20px !important;
+  }
+  #verified .envelopeWrap.open .letterPaper,
+  .envelopeWrap.open .letterPaper{
+    transform:translateY(-17%) scale(.99) !important;
+  }
+}
+
+@media (max-width: 390px){
+  :root{
+    --mj-envelope-width:min(355px, 88vw);
+  }
+  #proposal .comic-stage{
+    min-height:235px;
+  }
+  #verified .letterPaper,
+  .letterPaper{
+    padding:22px 14px 18px !important;
+  }
+  #verified .paperMessage,
+  .paperMessage{
+    max-width:290px;
+    line-height:1.28;
+  }
+}
